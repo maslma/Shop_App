@@ -1,4 +1,5 @@
 class AppStrings {
+  static const splash = "Shop App";
   static const noRouteFound = "noRouteFound";
   static const onBoardingTitle1 = "SEE THE BEST COURSE #1";
   static const onBoardingTitle2 = "SEE THE BEST COURSE #2";

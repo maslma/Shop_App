@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/data/local/chach_helper.dart';
 import 'package:shop_app/data/remote/dio_helper.dart';
 import 'package:shop_app/utities/bloc_observer.dart';
-
 import 'presentation/presentation_managers/routes_manager.dart';
 import 'presentation/presentation_managers/theme_manager.dart';
 
@@ -20,15 +19,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [  ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: getApplicationTheme(),
-        onGenerateRoute: RoutesGenerator.getRoutes,
-        initialRoute: Routes.splashRoute,
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Shop App',
+      theme: getApplicationTheme(),
+      onGenerateRoute: RoutesGenerator.getRoutes,
+      initialRoute: Routes.splashRoute,
     );
   }
 }

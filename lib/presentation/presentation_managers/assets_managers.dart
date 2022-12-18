@@ -1,7 +1,7 @@
 const String imagePath = 'assets/images';
 
 class ImageAssets {
-  static const String splashlogo = '$imagePath/splash_logo.png';
+  static const String splashlogo = '$imagePath/splash_bg.jpg';
   
   static const String onBoarding1 = '$imagePath/onboarding_logo1.svg';
   static const String onBoarding2 = '$imagePath/onboarding_logo2.svg';

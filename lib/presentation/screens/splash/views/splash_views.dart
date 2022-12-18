@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shop_app/presentation/presentation_managers/string_manager.dart';
+import 'package:shop_app/presentation/presentation_managers/values_managers.dart';
 
 import '../../../../data/local/chach_helper.dart';
 import '../../../presentation_managers/assets_managers.dart';
@@ -37,8 +39,28 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.primary,
-      body: const Center(child: Image(image: AssetImage(ImageAssets.splashlogo))),
+      //backgroundColor: ColorManager.primary,
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(AppSize.s28),
+            child: const Image(
+              width: AppSize.s200,
+              height: AppSize.s200,
+              image: AssetImage(ImageAssets.splashlogo),
+            ),
+          ),
+          SizedBox(
+            height: AppSize.s40,
+          ),
+          Text(
+            AppStrings.splash,
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
+        ],
+      )),
     );
   }
 

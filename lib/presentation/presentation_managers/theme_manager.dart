@@ -57,8 +57,9 @@ ThemeData getApplicationTheme() {
       bodySmall: getRegularStyle(color: ColorManager.grey),
       bodyMedium: getRegularStyle(color: ColorManager.grey2, fontSize: FontSize.s12),
       labelSmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s14),
+      labelMedium: getBoldStyle(color: ColorManager.splashBg, fontSize: FontSize.s35),
     ),
-    
+
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: ColorManager.primary,
     ),
