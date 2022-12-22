@@ -17,6 +17,7 @@ class AppStrings {
   static const skip = "skip";
   static const username = "Username";
   static const password = "Password";
+  static const phone = "Phone";
   static const usernameError = "Please enter your user name";
   static const passwordError = "Please enter your password";
   static const login = "Login";
@@ -26,7 +27,7 @@ class AppStrings {
   static const loading = "loading";
   static const retryAgain = "retry_again";
   static const ok = "ok";
-  static const String emailHint = 'email_hint';
+  static const String emailHint = 'Email';
   static const String invalidEmail = "email_error";
   static const String resetPassword = "reset_password";
   static const String success = "success";
@@ -34,7 +35,7 @@ class AppStrings {
   static const String mobileNumberInvalid = "mobile_number_hint_message";
   static const String passwordInvalid = "password_hint_message";
   static const String alreadyHaveAccount = "already_have_account";
-  static const register = "register";
+  static const register = "Register";
   static const mobileNumber = "mobile_number_hint";
   static const profilePicture = "upload_profile_picture";
   static const photoGallery = "photo_from_galley";

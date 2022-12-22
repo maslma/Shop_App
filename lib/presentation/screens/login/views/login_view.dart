@@ -1,16 +1,5 @@
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../utities/main_method.dart';
-import '../../../global_widgets/global_text_button.dart';
-import '../../../global_widgets/global_text_form_field.dart';
-import '../../../presentation_managers/assets_managers.dart';
-import '../../../presentation_managers/color_manager.dart';
-import '../../../presentation_managers/string_manager.dart';
-import '../../../presentation_managers/values_managers.dart';
-import '../view_model/cubit.dart';
-import '../view_model/states.dart';
+import 'package:shop_app/presentation/presentation_managers/exports.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -26,86 +15,99 @@ class LoginView extends StatelessWidget {
       builder: (context, state) {
         LoginCubit cubit = LoginCubit.get(context);
         return Scaffold(
-          backgroundColor: ColorManager.white,
-          body: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Form(
-              key: cubit.formKey,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: AppPadding.p100),
-                    child: Image.asset(ImageAssets.splashlogo),
+          backgroundColor: ColorManager.primary,
+          body: Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSize.s16.w),
+            child: Center(
+              child: SizedBox(
+                height: AppSize.s500.h,
+                width: AppSize.s500.w,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: ColorManager.white,
+                    borderRadius: BorderRadius.circular(AppSize.s14.r),
                   ),
-                  const SizedBox(height: AppSize.s20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
-                    child: GlobalTextFormField(
-                      textInputType: TextInputType.emailAddress,
-                      textController: cubit.emailController,
-                      vaildMessage: AppStrings.usernameError,
-                      decoration: const InputDecoration(
-                        hintText: AppStrings.username,
-                        labelText: AppStrings.username,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: AppSize.s20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
-                    child: GlobalTextFormField(
-                      textInputType: TextInputType.visiblePassword,
-                      textController: cubit.passwordController,
-                      vaildMessage: AppStrings.passwordError,
-                      isPassword: true,
-                      decoration: const InputDecoration(
-                        hintText: AppStrings.password,
-                        labelText: AppStrings.password,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: AppSize.s28),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
-                    child: SizedBox(
-                      height: AppSize.s50,
-                      width: double.infinity,
-                      child: ConditionalBuilder(
-                        condition: state is! LoginLoadingState,
-                        builder: (context) => ElevatedButton(
-                          onPressed: () {
-                            if (cubit.formKey.currentState!.validate()) {
-                             
-                            }
-                          },
-                          child: const Text(
-                            AppStrings.login,
+                  child: Form(
+                    key: cubit.formKey,
+                    child: Column(
+                      children: [
+                        SizedBox(height: AppSize.s28.h),
+                        Text(
+                          AppStrings.login,
+                          style: Theme.of(context).textTheme.labelMedium,
+                        ),
+                        SizedBox(height: AppSize.s40.h),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: AppPadding.p28.w),
+                          child: GlobalTextFormField(
+                            textInputType: TextInputType.emailAddress,
+                            textController: cubit.emailController,
+                            vaildMessage: AppStrings.usernameError,
+                            decoration: const InputDecoration(
+                              hintText: AppStrings.username,
+                              labelText: AppStrings.username,
+                            ),
                           ),
                         ),
-                        fallback: (context) => const Center(child: CircularProgressIndicator()),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: AppSize.s28),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GlobalTextButton(
-                          onPressed: () {},
-                          text: AppStrings.forgetPassword,
+                        SizedBox(height: AppSize.s20.h),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: AppPadding.p28.w),
+                          child: GlobalTextFormField(
+                            textInputType: TextInputType.visiblePassword,
+                            textController: cubit.passwordController,
+                            vaildMessage: AppStrings.passwordError,
+                            isPassword: true,
+                            decoration: const InputDecoration(
+                              hintText: AppStrings.password,
+                              labelText: AppStrings.password,
+                            ),
+                          ),
                         ),
-                        GlobalTextButton(
-                          onPressed: () {
-                            //navTo(routeName: Routes.splashRoute, context: context);
-                          },
-                          text: AppStrings.registerText,
+                        SizedBox(height: AppSize.s28.h),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: AppPadding.p28),
+                          child: SizedBox(
+                            height: AppSize.s50.h,
+                            width: double.infinity.w,
+                            child: ConditionalBuilder(
+                              condition: state is! LoginLoadingState,
+                              builder: (context) => ElevatedButton(
+                                onPressed: () {
+                                  if (cubit.formKey.currentState!.validate()) {}
+                                },
+                                child: const Text(
+                                  AppStrings.login,
+                                ),
+                              ),
+                              fallback: (context) => const Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: AppSize.s28.h),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: AppPadding.p28.w),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              GlobalTextButton(
+                                onPressed: () {},
+                                text: AppStrings.forgetPassword,
+                              ),
+                              GlobalTextButton(
+                                onPressed: () {
+                                  navTo(routeName: Routes.registerRoute, context: context);
+                                },
+                                text: AppStrings.registerText,
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                ],
+                ),
               ),
             ),
           ),

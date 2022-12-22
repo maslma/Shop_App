@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/presentation/presentation_managers/string_manager.dart';
+import 'package:shop_app/presentation/screens/login/views/login_view.dart';
+import 'package:shop_app/presentation/screens/register/view/register_view.dart';
 import 'package:shop_app/presentation/screens/splash/views/splash_views.dart';
 
 class Routes {
@@ -16,11 +18,13 @@ class RoutesGenerator {
   static Route<dynamic> getRoutes(RouteSettings settings) {
     switch (settings.name) {
       case Routes.splashRoute:
-        return MaterialPageRoute(builder: (_) =>const SplashView());
+        return MaterialPageRoute(builder: (_) => const SplashView());
       // case Routes.onboardingRoute:
       //   return MaterialPageRoute(builder: (_) => null);
-      // case Routes.loginRoute:
-      //   return MaterialPageRoute(builder: (_) => null );
+      case Routes.loginRoute:
+        return MaterialPageRoute(builder: (_) => const LoginView());
+      case Routes.registerRoute:
+        return MaterialPageRoute(builder: (_) => const RegisterView());
 
       default:
         return unDefinedRoute();

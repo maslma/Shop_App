@@ -15,8 +15,11 @@ ThemeData getApplicationTheme() {
     splashColor: ColorManager.lightPrimary,
     // ripple effect color
     // cardview theme
-    cardTheme:
-        CardTheme(color: ColorManager.white, shadowColor: ColorManager.grey, elevation: AppSize.s4),
+    cardTheme: CardTheme(
+      color: ColorManager.white,
+      shadowColor: ColorManager.grey,
+      elevation: AppSize.s4,
+    ),
     // app bar theme
     appBarTheme: AppBarTheme(
         centerTitle: true,
@@ -57,7 +60,7 @@ ThemeData getApplicationTheme() {
       bodySmall: getRegularStyle(color: ColorManager.grey),
       bodyMedium: getRegularStyle(color: ColorManager.grey2, fontSize: FontSize.s12),
       labelSmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s14),
-      labelMedium: getBoldStyle(color: ColorManager.splashBg, fontSize: FontSize.s35),
+      labelMedium: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s35),
     ),
 
     progressIndicatorTheme: ProgressIndicatorThemeData(

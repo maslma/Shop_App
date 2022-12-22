@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shop_app/data/local/chach_helper.dart';
-import 'package:shop_app/data/remote/dio_helper.dart';
-import 'package:shop_app/utities/bloc_observer.dart';
-import 'presentation/presentation_managers/routes_manager.dart';
-import 'presentation/presentation_managers/theme_manager.dart';
+import 'package:shop_app/presentation/presentation_managers/exports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,12 +20,18 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       useInheritedMediaQuery: true,
       builder: (BuildContext context, Widget? child) {
-        return  MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Shop App',
-          theme: getApplicationTheme(),
-          onGenerateRoute: RoutesGenerator.getRoutes,
-          initialRoute: Routes.splashRoute,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => LoginCubit()),
+            BlocProvider(create: (context) => RegisterCubit()),
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Shop App',
+            theme: getApplicationTheme(),
+            onGenerateRoute: RoutesGenerator.getRoutes,
+            initialRoute: Routes.splashRoute,
+          ),
         );
       },
     );

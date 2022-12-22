@@ -1,12 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:shop_app/presentation/presentation_managers/color_manager.dart';
 import 'package:shop_app/presentation/presentation_managers/string_manager.dart';
 import 'package:shop_app/presentation/presentation_managers/values_managers.dart';
-
-import '../../../../data/local/chach_helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../presentation_managers/assets_managers.dart';
-import '../../../presentation_managers/color_manager.dart';
 import '../../../presentation_managers/constancts_manager.dart';
 import '../../../presentation_managers/routes_manager.dart';
 
@@ -25,9 +23,11 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() {
-    CachHelper.getData(key: 'onboarding') == true
-        ? Navigator.pushReplacementNamed(context, Routes.loginRoute)
-        : Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
+    Navigator.pushReplacementNamed(context, Routes.loginRoute);
+
+    // CachHelper.getData(key: 'onboarding') == true
+    //     ? Navigator.pushReplacementNamed(context, Routes.loginRoute)
+    //     : Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
   }
 
   @override
@@ -39,25 +39,26 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: ColorManager.primary,
+      backgroundColor: ColorManager.primary,
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(AppSize.s28),
-            child: const Image(
-              width: AppSize.s200,
-              height: AppSize.s200,
-              image: AssetImage(ImageAssets.splashlogo),
+          Image(
+            height: AppSize.s200.h,
+            width: AppSize.s200.w,
+            image: const AssetImage(
+              ImageAssets.splash,
             ),
           ),
           SizedBox(
-            height: AppSize.s40,
+            height: AppSize.s40.h,
           ),
           Text(
             AppStrings.splash,
-            style: Theme.of(context).textTheme.labelMedium,
+            style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                  color: ColorManager.black,
+                ),
           ),
         ],
       )),
