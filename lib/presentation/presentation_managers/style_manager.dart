@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'font_manager.dart';
 
-TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
+TextStyle  _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
   return TextStyle(
     fontSize: fontSize,
     fontFamily: FontConstants.fontFamily,
@@ -14,7 +13,7 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
 // regular style
 
 TextStyle getRegularStyle({
-  double fontSize = FontSize.s12,
+    double fontSize = FontSize.s12,
   required Color color,
 }) {
   return _getTextStyle(

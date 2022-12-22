@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/data/local/chach_helper.dart';
 import 'package:shop_app/data/remote/dio_helper.dart';
 import 'package:shop_app/utities/bloc_observer.dart';
@@ -19,12 +20,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Shop App',
-      theme: getApplicationTheme(),
-      onGenerateRoute: RoutesGenerator.getRoutes,
-      initialRoute: Routes.splashRoute,
+    return ScreenUtilInit(
+      designSize: const Size(377, 813),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      useInheritedMediaQuery: true,
+      builder: (BuildContext context, Widget? child) {
+        return  MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Shop App',
+          theme: getApplicationTheme(),
+          onGenerateRoute: RoutesGenerator.getRoutes,
+          initialRoute: Routes.splashRoute,
+        );
+      },
     );
   }
 }
