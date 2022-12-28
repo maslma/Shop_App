@@ -23,7 +23,7 @@ class BottomNavView extends StatelessWidget {
             items: cubit.items,
             confineInSafeArea: true,
 
-            backgroundColor: ColorManager.primary, // Default is Colors.white.
+            backgroundColor: ColorManager.primary.withOpacity(0.5), // Default is Colors.white.
             decoration: NavBarDecoration(
               borderRadius: BorderRadius.circular(AppSize.s20.r),
               colorBehindNavBar: Colors.transparent,

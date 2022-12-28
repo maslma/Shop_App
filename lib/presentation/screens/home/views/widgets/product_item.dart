@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/presentation/presentation_managers/exports.dart';
 
-import '../../../../presentation_managers/values_managers.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({Key? key}) : super(key: key);
@@ -19,7 +17,7 @@ class ProductItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(25.r),
               child: Image.asset(
-                'assets/images/product.jpg',
+                'assets/images/Product.jpg',
                 height: AppSize.s210.h,
                 width: double.infinity.w,
                 fit: BoxFit.cover,
@@ -28,7 +26,7 @@ class ProductItem extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                padding:  EdgeInsets.symmetric(horizontal: AppSize.s10.w,vertical:  AppSize.s10.h),
                 child: Container(
                   height: AppSize.s28,
                   width: AppSize.s50,
