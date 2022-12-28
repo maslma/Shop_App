@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-import 'package:shop_app/presentation/presentation_managers/color_manager.dart';
 import 'package:shop_app/presentation/presentation_managers/exports.dart';
 import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_cubit.dart';
 import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_state.dart';

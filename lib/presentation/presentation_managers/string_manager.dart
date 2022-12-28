@@ -19,6 +19,10 @@ class AppStrings {
  // register
    static const haveAccount = "Already have account?";
 
+//Home
+  static const price = "100\$";
+  static const discount = "50%";
+  static const namePrice = "price";
 
 
   static const username = "Username";

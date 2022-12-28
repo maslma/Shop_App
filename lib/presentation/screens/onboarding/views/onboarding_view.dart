@@ -16,7 +16,7 @@ class OnboardingView extends StatelessWidget {
     return BlocConsumer<OnBoardingCubit, OnBoardingStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        OnBoardingCubit cubit = OnBoardingCubit.get(context);
+        //OnBoardingCubit cubit = OnBoardingCubit.get(context);
         return Scaffold(   
   
           backgroundColor: ColorManager.white,
