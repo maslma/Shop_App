@@ -20,26 +20,26 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.home),
       title: "Home",
-      activeColorPrimary: ColorManager.primary,
-      inactiveColorPrimary: CupertinoColors.systemGrey,
+      activeColorPrimary: ColorManager.black,
+      inactiveColorPrimary: ColorManager.white,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.search),
       title: "Search",
-      activeColorPrimary: ColorManager.primary,
-      inactiveColorPrimary: CupertinoColors.systemGrey,
+      activeColorPrimary: ColorManager.black,
+      inactiveColorPrimary: ColorManager.white,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.heart_fill),
       title: "Activity",
-      activeColorPrimary: ColorManager.primary,
-      inactiveColorPrimary: CupertinoColors.systemGrey,
+      activeColorPrimary: ColorManager.black,
+      inactiveColorPrimary: ColorManager.white,
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.person_fill),
       title: "Profile",
-      activeColorPrimary: ColorManager.primary,
-      inactiveColorPrimary: CupertinoColors.systemGrey,
+      activeColorPrimary: ColorManager.black,
+      inactiveColorPrimary: ColorManager.white,
     ),
   ];
 }

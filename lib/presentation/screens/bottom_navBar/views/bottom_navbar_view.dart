@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:shop_app/presentation/presentation_managers/color_manager.dart';
+import 'package:shop_app/presentation/presentation_managers/exports.dart';
 import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_cubit.dart';
 import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_state.dart';
 
@@ -21,8 +22,13 @@ class BottomNavView extends StatelessWidget {
             screens: cubit.screens,
             items: cubit.items,
             confineInSafeArea: true,
+
             backgroundColor: ColorManager.primary, // Default is Colors.white.
-            //handleAndroidBackButtonPress: true, // Default is true.
+            decoration: NavBarDecoration(
+              borderRadius: BorderRadius.circular(AppSize.s20.r),
+              colorBehindNavBar: Colors.transparent,
+            ),
+            margin: EdgeInsets.symmetric(horizontal: AppSize.s20.w, vertical: 20),
             resizeToAvoidBottomInset:
                 true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
             stateManagement: true, // Default is true.
