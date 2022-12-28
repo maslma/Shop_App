@@ -20,7 +20,7 @@ class RegisterView extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: AppSize.s16.w),
             child: Center(
               child: SizedBox(
-                height: AppSize.s500.h,
+                height: AppSize.s600.h,
                 width: AppSize.s500.w,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
@@ -119,16 +119,16 @@ class RegisterView extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                GlobalTextButton(
-                                  onPressed: () {},
-                                  text: AppStrings.forgetPassword,
-                                ),
-                                GlobalTextButton(
-                                  onPressed: () {
-                                    // navTo(routeName: Routes.splashRoute, context: context);
-                                  },
-                                  text: 'r',
-                                ),
+                                // GlobalTextButton(
+                                //   onPressed: () {},
+                                //   text: AppStrings.forgetPassword,
+                                // ),
+                                // GlobalTextButton(
+                                //   onPressed: () {
+                                //     // navTo(routeName: Routes.splashRoute, context: context);
+                                //   },
+                                //   text: 'r',
+                                // ),
                               ],
                             ),
                           ),
