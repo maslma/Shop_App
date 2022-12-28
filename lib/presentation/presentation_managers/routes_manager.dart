@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/presentation/presentation_managers/string_manager.dart';
 import 'package:shop_app/presentation/screens/login/views/login_view.dart';
-import 'package:shop_app/presentation/screens/register/view/register_view.dart';
+import 'package:shop_app/presentation/screens/register/views/register_view.dart';
 import 'package:shop_app/presentation/screens/splash/views/splash_views.dart';
 
 class Routes {

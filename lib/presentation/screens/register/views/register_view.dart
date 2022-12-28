@@ -117,18 +117,21 @@ class RegisterView extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: AppPadding.p28.w),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                // GlobalTextButton(
-                                //   onPressed: () {},
-                                //   text: AppStrings.forgetPassword,
-                                // ),
-                                // GlobalTextButton(
-                                //   onPressed: () {
-                                //     // navTo(routeName: Routes.splashRoute, context: context);
-                                //   },
-                                //   text: 'r',
-                                // ),
+                                Text(
+                                  AppStrings.haveAccount,
+                                  style: TextStyle(
+                                    //color: ColorManager.primary,
+                                    fontSize: AppSize.s14,
+                                  ),
+                                ),
+                                GlobalTextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  text: AppStrings.login,
+                                ),
                               ],
                             ),
                           ),
