@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/presentation/presentation_managers/color_manager.dart';
 import 'package:shop_app/presentation/presentation_managers/exports.dart';
+import 'package:shop_app/presentation/screens/home/views/widgets/product_item.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -8,26 +9,13 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.primary.withOpacity(0.4),
+      backgroundColor: ColorManager.white,
       body: SafeArea(
-        child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              Container(
-                height: AppSize.s120.h,
-                width: double.infinity.w,
-                color: Colors.red,
-                child: Row(
-                  children: [
-                    Text(
-                      '',
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: ProductItem())
+          ],
         ),
       ),
     );
