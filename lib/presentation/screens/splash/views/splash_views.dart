@@ -18,9 +18,9 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
-  _statrtDelay() {
-    _timer = Timer(const Duration(seconds: AppConst.splashDelay), _goNext);
-  }
+  // _statrtDelay() {
+  //   _timer = Timer(const Duration(seconds: AppConst.splashDelay), _goNext);
+  // }
 
   _goNext() {
     Navigator.pushReplacementNamed(context, Routes.loginRoute);
@@ -33,7 +33,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    _statrtDelay();
+   // _statrtDelay();
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/presentation/presentation_managers/exports.dart';
+import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,13 +25,14 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider(create: (context) => LoginCubit()),
             BlocProvider(create: (context) => RegisterCubit()),
+            BlocProvider(create: (context) => BottomNavCubit()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Shop App',
             theme: getApplicationTheme(),
             onGenerateRoute: RoutesGenerator.getRoutes,
-            initialRoute: Routes.splashRoute,
+            initialRoute: Routes.navBarRoute,
           ),
         );
       },

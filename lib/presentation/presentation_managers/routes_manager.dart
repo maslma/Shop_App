@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/presentation/presentation_managers/string_manager.dart';
+import 'package:shop_app/presentation/screens/bottom_navBar/views/bottom_navbar_view.dart';
+import 'package:shop_app/presentation/screens/home/views/home_view.dart';
 import 'package:shop_app/presentation/screens/login/views/login_view.dart';
 import 'package:shop_app/presentation/screens/register/views/register_view.dart';
 import 'package:shop_app/presentation/screens/splash/views/splash_views.dart';
@@ -11,7 +13,9 @@ class Routes {
   static const String registerRoute = '/register';
   static const String forgotPasswordRoute = '/forgotPasswor';
   static const String mainRoute = '/main';
-  static const String storeDetailsRoute = '/storeDetails';
+  static const String storeDetailsRoute = '/storeDetails'; 
+  static const String homeRoute = '/home'; 
+  static const String navBarRoute = '/navBar'; 
 }
 
 class RoutesGenerator {
@@ -25,6 +29,10 @@ class RoutesGenerator {
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
+      case Routes.homeRoute:
+        return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.navBarRoute:
+        return MaterialPageRoute(builder: (_) => const BottomNavView());
 
       default:
         return unDefinedRoute();
