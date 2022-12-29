@@ -20,18 +20,16 @@ class BottomNavView extends StatelessWidget {
             screens: cubit.screens,
             items: cubit.items,
             confineInSafeArea: true,
-
             backgroundColor: ColorManager.primary.withOpacity(0.5), // Default is Colors.white.
             decoration: NavBarDecoration(
               borderRadius: BorderRadius.circular(AppSize.s20.r),
-              colorBehindNavBar: Colors.transparent,
             ),
-            margin: EdgeInsets.symmetric(horizontal: AppSize.s20.w, vertical: 20),
-            resizeToAvoidBottomInset:
-                true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+            margin: EdgeInsets.symmetric(horizontal: AppSize.s20.w, vertical: AppSize.s14.h),
+            // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+            resizeToAvoidBottomInset: false,
             stateManagement: true, // Default is true.
-            hideNavigationBarWhenKeyboardShows:
-                true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+            // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+            hideNavigationBarWhenKeyboardShows: true,
             popAllScreensOnTapOfSelectedTab: true,
             popActionScreens: PopActionScreensType.all,
             itemAnimationProperties: const ItemAnimationProperties(
@@ -44,6 +42,7 @@ class BottomNavView extends StatelessWidget {
               duration: Duration(milliseconds: 150),
             ),
             navBarStyle: NavBarStyle.style8, // Choose the nav bar style with this property.
+            bottomScreenMargin: 0.0,
           ),
         );
       },

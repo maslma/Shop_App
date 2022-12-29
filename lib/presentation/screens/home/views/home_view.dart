@@ -151,7 +151,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: AppSize.s35.h,
+                    height: AppSize.s70.h,
                   ),
                 ],
               ),
