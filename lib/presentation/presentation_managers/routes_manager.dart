@@ -16,6 +16,7 @@ class Routes {
   static const String storeDetailsRoute = '/storeDetails'; 
   static const String homeRoute = '/home'; 
   static const String navBarRoute = '/navBar'; 
+  static const String cateRoute = '/cate'; 
 }
 
 class RoutesGenerator {

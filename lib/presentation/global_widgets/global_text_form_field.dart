@@ -4,11 +4,11 @@ class GlobalTextFormField extends StatelessWidget {
   final TextInputType? textInputType;
   final TextEditingController? textController;
   final InputDecoration? decoration;
-  String? Function(String?)? validator;
+  final String? Function(String?)? validator;
   final String? vaildMessage;
   final bool? isPassword;
 
-  GlobalTextFormField({
+  const GlobalTextFormField({
     super.key,
     this.textInputType,
     this.textController,

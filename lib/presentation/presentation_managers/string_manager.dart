@@ -21,7 +21,7 @@ class AppStrings {
 
 //Home
   static const price = "100\$";
-  static const discount = "50\%";
+  static const discount = "50%";
   static const namePrice = "price";
 
 

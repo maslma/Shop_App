@@ -4,6 +4,7 @@ import 'package:shop_app/presentation/presentation_managers/exports.dart';
 import 'package:shop_app/presentation/screens/home/view_model/home_cubit.dart';
 import 'package:shop_app/presentation/screens/home/view_model/home_state.dart';
 import 'package:shop_app/presentation/screens/home/views/widgets/carosal_item.dart';
+import 'package:shop_app/presentation/screens/home/views/widgets/category_details.dart';
 import 'package:shop_app/presentation/screens/home/views/widgets/category_item.dart';
 import 'package:shop_app/presentation/screens/home/views/widgets/product_item.dart';
 
@@ -22,7 +23,6 @@ class HomeView extends StatelessWidget {
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
@@ -34,7 +34,7 @@ class HomeView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Find your\n favorite products',
+                            'Find your\nfavorite products',
                             style: TextStyle(
                               fontSize: AppSize.s28.sp,
                               color: ColorManager.black,
@@ -70,26 +70,88 @@ class HomeView extends StatelessWidget {
                       initialPage: 0,
                     ),
                   ),
-                  SizedBox(height: AppSize.s28.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: AppPadding.p28.h),
+                    child: SizedBox(
+                      height: AppSize.s40.h,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        padding: EdgeInsets.only(left: AppSize.s28.w),
+                        itemBuilder: (context, index) => CategoryItem(
+                          onTap: () => Navigator.of(context, rootNavigator: true).push(
+                            MaterialPageRoute(
+                              builder: (context) => CategoryDetails(
+                                  text: cubit.categoryModel!.data!.data![index].name!,
+                                  image: cubit.categoryModel!.data!.data![index].image!),
+                            ),
+                          ),
+                          text: cubit.categoryModel == null
+                              ? '...'
+                              : cubit.categoryModel!.data!.data![index].name!,
+                        ),
+                        separatorBuilder: (context, index) => SizedBox(width: AppSize.s18.w),
+                        itemCount: cubit.categoryModel == null
+                            ? 5
+                            : cubit.categoryModel!.data!.data!.length,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: AppSize.s28.h),
+                    child: Text(
+                      'Popular product',
+                      style: TextStyle(
+                        fontSize: AppSize.s28.sp,
+                        color: ColorManager.black,
+                      ),
+                    ),
+                  ),
                   SizedBox(
-                    height: AppSize.s40.h,
+                    height: AppSize.s20.h,
+                  ),
+                  SizedBox(
+                    height: AppSize.s250.h,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
                       padding: EdgeInsets.only(left: AppSize.s28.w),
-                      itemBuilder: (context, index) => CategoryItem(
-                        text:cubit.categoryModel ==null? '...':cubit.categoryModel!.data!.data![index].name!,
-                      ),
+                      itemBuilder: (context, index) => const ProductItem(),
                       separatorBuilder: (context, index) => SizedBox(width: AppSize.s18.w),
-                      itemCount: cubit.categoryModel == null ?5 : cubit.categoryModel!.data!.data!.length,
+                      itemCount:
+                          cubit.categoryModel == null ? 7 : cubit.categoryModel!.data!.data!.length,
                     ),
                   ),
                   SizedBox(
-                    height: AppSize.s28.h,
+                    height: AppSize.s20.h,
                   ),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: AppSize.s28.w),
-                    child: const ProductItem(),
+                    padding: EdgeInsets.only(left: AppSize.s28.h),
+                    child: Text(
+                      'New product',
+                      style: TextStyle(
+                        fontSize: AppSize.s28.sp,
+                        color: ColorManager.black,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppSize.s20.h,
+                  ),
+                  SizedBox(
+                    height: AppSize.s250.h,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.only(left: AppSize.s28.w),
+                      itemBuilder: (context, index) => const ProductItem(),
+                      separatorBuilder: (context, index) => SizedBox(width: AppSize.s18.w),
+                      itemCount:
+                          cubit.categoryModel == null ? 7 : cubit.categoryModel!.data!.data!.length,
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppSize.s35.h,
                   ),
                 ],
               ),

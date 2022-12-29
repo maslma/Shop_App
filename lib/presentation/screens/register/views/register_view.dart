@@ -119,7 +119,7 @@ class RegisterView extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
+                                const Text(
                                   AppStrings.haveAccount,
                                   style: TextStyle(
                                     //color: ColorManager.primary,

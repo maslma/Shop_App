@@ -5,8 +5,6 @@ import 'package:shop_app/presentation/presentation_managers/string_manager.dart'
 import 'package:shop_app/presentation/presentation_managers/values_managers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../presentation_managers/assets_managers.dart';
-import '../../../presentation_managers/constancts_manager.dart';
-import '../../../presentation_managers/routes_manager.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -22,13 +20,13 @@ class _SplashViewState extends State<SplashView> {
   //   _timer = Timer(const Duration(seconds: AppConst.splashDelay), _goNext);
   // }
 
-  _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.loginRoute);
+  // _goNext() {
+  //   Navigator.pushReplacementNamed(context, Routes.loginRoute);
 
-    // CachHelper.getData(key: 'onboarding') == true
-    //     ? Navigator.pushReplacementNamed(context, Routes.loginRoute)
-    //     : Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
-  }
+  //   // CachHelper.getData(key: 'onboarding') == true
+  //   //     ? Navigator.pushReplacementNamed(context, Routes.loginRoute)
+  //   //     : Navigator.pushReplacementNamed(context, Routes.onboardingRoute);
+  // }
 
   @override
   void initState() {
