@@ -4,6 +4,7 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:shop_app/presentation/presentation_managers/color_manager.dart';
 import 'package:shop_app/presentation/screens/bottom_navBar/view_model/bottom_nav_state.dart';
 import 'package:shop_app/presentation/screens/home/views/home_view.dart';
+import 'package:shop_app/presentation/screens/search/views/search_view.dart';
 
 class BottomNavCubit extends Cubit<BottomNavState> {
   BottomNavCubit() : super(BottomNavInitial());
@@ -12,7 +13,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
 
   List<Widget> screens = [
     const HomeView(),
-    const HomeView(),
+    const SearchView(),
     const HomeView(),
     const HomeView(),
   ];
