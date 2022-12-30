@@ -38,7 +38,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.person_fill),
-      title: "Profile",
+      title: "settings",
       activeColorPrimary: ColorManager.black,
       inactiveColorPrimary: ColorManager.white,
     ),
