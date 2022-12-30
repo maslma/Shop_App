@@ -27,7 +27,10 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context) => LoginCubit()),
             BlocProvider(create: (context) => RegisterCubit()),
             BlocProvider(create: (context) => BottomNavCubit()),
-            BlocProvider(create: (context) => HomeCubit()..getBanners()..getCategories()),
+            BlocProvider(
+                create: (context) => HomeCubit()
+                  ..getBanners()
+                  ..getCategories()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

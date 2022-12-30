@@ -32,7 +32,7 @@ class BottomNavCubit extends Cubit<BottomNavState> {
     ),
     PersistentBottomNavBarItem(
       icon: const Icon(CupertinoIcons.heart_fill),
-      title: "Activity",
+      title: "Favorite",
       activeColorPrimary: ColorManager.black,
       inactiveColorPrimary: ColorManager.white,
     ),
